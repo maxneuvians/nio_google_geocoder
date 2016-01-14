@@ -39,9 +39,9 @@ To geocode an address in the changeset you need to pass it `(changeset, [list of
 
 ex. `add_geo_coordinates_to_changeset(changeset, [:address, :city, :zip], :latitude, :longitude)`
 
-It is important to remember that it will only update the geolocation if any of the `[list of address fields]` change. Otherwise it just returns the changeset.
+It is important to remember that it will only update the geolocation if any of the `[list of address fields]` change. Otherwise it returns the changeset.
 
-Also pass the list of address fields in logical order ex. `[:address, :city, :zip]` vs. `[:zip, :address, :city]` as the values of the field or concatenated for geocoding.
+Also pass the list of address fields in logical order ex. `[:address, :city, :zip]` vs. `[:zip, :address, :city]` as the values of the field are concatenated for geocoding.
 
 ##### Example in Model
 ```
