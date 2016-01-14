@@ -3,19 +3,17 @@ defmodule NioGoogleGeocoder.Mixfile do
 
   def project do
     [app: :nio_google_geocoder,
-     version: "0.5.0",
+     version: "0.6.0",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
   end
 
-  # Configuration for the OTP application
-  #
-  # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    []
   end
+
   defp deps do
     [
       {:ecto, "~> 1.1"},
@@ -23,4 +21,22 @@ defmodule NioGoogleGeocoder.Mixfile do
       {:poison, "~> 1.5"}
     ]
   end
+
+  defp description do
+    """
+    NioGoogleGeocoder is a collection of Elixir convenience functions to
+    geocode a single, or list of, addresses. It also includes a function
+    that automatically adds a geo location to an `Ecto.Changeset`.
+    """
+  end
+
+  defp package do
+    [# These are the default files included in the package
+     files: ["config", "lib", "mix.exs", "README*", "LICENSE*"],
+     maintainers: ["Max Neuvians"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/maxneuvians/nio_google_geocoder",
+              "Docs" => "https://github.com/maxneuvians/nio_google_geocoder"}]
+  end
+
 end

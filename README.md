@@ -1,6 +1,6 @@
 # NioGoogleGeocoder
 
-NioGoogleGeocoder is a collection of Elixir convenience functions to geocode a single, or list of, addresses. It also includes a function that automatically add a geo location to an `Ecto.Changeset`.
+NioGoogleGeocoder is a collection of Elixir convenience functions to geocode a single, or list of, addresses. It also includes a function that automatically adds a geo location to an `Ecto.Changeset`.
 
 ## Installation
 Add `nio_google_geocoder` to your list of dependencies in `mix.exs`:
