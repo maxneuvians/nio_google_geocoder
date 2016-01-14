@@ -21,20 +21,14 @@ defmodule NioGoogleGeocoder do
   def geocode([h|t]), do: [geocode(h) | geocode(t)]
   def geocode(_), do: {:error, "Geocode requires a string or list of strings."}
 
-  @doc """
-  Joins the query params
-  """
+  # Joins the query params
   defp build_query(address, nil), do: "address=" <> address
   defp build_query(address, key), do: "address=" <> address <> "&key=" <> key
 
-  @doc """
-  Joins encoded query params to the base url
-  """
+  # Joins encoded query params to the base url
   defp build_url(query), do: @url_endpoint <> query
 
-  @doc """
-  Executes the geocoding request and returns a tuple starting wit :ok or :error
-  """
+  # Executes the geocoding request and returns a tuple starting with :ok or :error
   defp get(url) do
     HTTPoison.start
     case HTTPoison.get(url, [], []) do

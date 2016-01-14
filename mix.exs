@@ -18,6 +18,7 @@ defmodule NioGoogleGeocoder.Mixfile do
   end
   defp deps do
     [
+      {:ecto, "~> 1.1"},
       {:httpoison, "~> 0.8.0"},
       {:poison, "~> 1.5"}
     ]
