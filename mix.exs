@@ -7,6 +7,8 @@ defmodule NioGoogleGeocoder.Mixfile do
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description,
+     package: package,
      deps: deps]
   end
 
@@ -32,7 +34,7 @@ defmodule NioGoogleGeocoder.Mixfile do
 
   defp package do
     [# These are the default files included in the package
-     files: ["config", "lib", "mix.exs", "README*", "LICENSE*"],
+     files: ["lib", "mix.exs", "README*", "LICENSE*"],
      maintainers: ["Max Neuvians"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/maxneuvians/nio_google_geocoder",

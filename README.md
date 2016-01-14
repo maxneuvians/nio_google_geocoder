@@ -6,7 +6,7 @@ NioGoogleGeocoder is a collection of Elixir convenience functions to geocode a s
 Add `nio_google_geocoder` to your list of dependencies in `mix.exs`:
 ```
 def deps do
-[{:nio_google_geocoder, github: "maxneuvians/nio_google_geocoder"}]
+[{:nio_google_geocoder, "~> 0.5.0"}]
 end
 ```
 
