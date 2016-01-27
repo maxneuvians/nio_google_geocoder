@@ -29,6 +29,13 @@ defmodule NioGoogleGeocoder.ChangesetTest do
     assert Ecto.Changeset.get_field(changeset, :longitude)
   end
 
+  test "add_geo_coordinates_to_changeset adds latitude and longitude to a changeset from the first result" do
+    changeset = Location.changeset(%Location{}, %{address: "74 High Street", city: "New Haven", state: "CT", zip: "06520"})
+    changeset = add_geo_coordinates_to_changeset(changeset, [:address, :city, :state, :zip], :latitude, :longitude)
+    assert Ecto.Changeset.get_field(changeset, :latitude)
+    assert Ecto.Changeset.get_field(changeset, :longitude)
+  end
+
   test "add_geo_coordinates_to_changeset does not add latitude and longitude if no address params are specified" do
     changeset = Location.changeset(%Location{}, %{address: "74 High Street", city: "New Haven", zip: "06520"})
     changeset = add_geo_coordinates_to_changeset(changeset, [], :latitude, :longitude)

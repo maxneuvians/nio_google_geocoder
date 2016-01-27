@@ -17,9 +17,12 @@ defmodule NioGoogleGeocoder.Changeset do
         address_fields
           |> Enum.map(fn field -> Map.get(merged_fields, field) end)
           |> Enum.join(" ")
-
       case geocode(new_address) do
         {:ok, [%{"geometry"=>%{"location"=>%{"lat"=>lat,"lng"=>lng}}}]}
+          -> changeset
+              |> put_change(latitude_field, lat)
+              |> put_change(longitude_field, lng)
+        {:ok, [%{"geometry"=>%{"location"=>%{"lat"=>lat,"lng"=>lng}}} | _ ]}
           -> changeset
               |> put_change(latitude_field, lat)
               |> put_change(longitude_field, lng)
