@@ -30,7 +30,6 @@ defmodule NioGoogleGeocoder do
 
   # Executes the geocoding request and returns a tuple starting with :ok or :error
   defp get(url) do
-    HTTPoison.start
     case HTTPoison.get(url, [], []) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}}
         ->

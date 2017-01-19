@@ -13,14 +13,15 @@ defmodule NioGoogleGeocoder.Mixfile do
   end
 
   def application do
-    []
+    [applications: [:httpoison]]
   end
 
   defp deps do
     [
       {:ecto, "~> 1.1"},
-      {:httpoison, "~> 0.8.0"},
-      {:poison, "~> 1.5"}
+      {:httpoison, "~> 0.9.0"},
+      {:poison, "~> 1.5"},
+      {:hackney, "1.6.1", override: true}
     ]
   end
 
