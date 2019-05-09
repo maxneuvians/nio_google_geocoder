@@ -24,7 +24,8 @@ defmodule NioGoogleGeocoder.Mixfile do
     [
       {:ecto, "~> 3.0"},
       {:httpoison, "~> 1.5"},
-      {:poison, "~> 4.0"}
+      {:poison, "~> 4.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
