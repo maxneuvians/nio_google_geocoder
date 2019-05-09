@@ -18,7 +18,7 @@ defmodule NioGoogleGeocoder.ChangesetTest do
 
     def changeset(user, params \\ :empty) do
       user
-      |> cast(params, ~w(name), ~w(address city state zip latitude longitude))
+      |> cast(params, ~w(name address city state zip latitude longitude)a)
     end
   end
 

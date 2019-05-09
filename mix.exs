@@ -2,26 +2,29 @@ defmodule NioGoogleGeocoder.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :nio_google_geocoder,
-     version: "0.7.0",
-     elixir: "~> 1.2",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     description: description,
-     package: package,
-     deps: deps]
+    [
+      app: :nio_google_geocoder,
+      version: "0.7.0",
+      elixir: "~> 1.4",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
+      deps: deps()
+    ]
   end
 
   def application do
-    [applications: [:httpoison]]
+    [
+      extra_applications: []
+    ]
   end
 
   defp deps do
     [
-      {:ecto, "~> 1.1"},
-      {:httpoison, "~> 0.9.0"},
-      {:poison, "~> 1.5"},
-      {:hackney, "1.6.1", override: true}
+      {:ecto, "~> 3.0"},
+      {:httpoison, "~> 1.5"},
+      {:poison, "~> 4.0"}
     ]
   end
 
@@ -34,12 +37,15 @@ defmodule NioGoogleGeocoder.Mixfile do
   end
 
   defp package do
-    [# These are the default files included in the package
-     files: ["lib", "mix.exs", "README*", "LICENSE*"],
-     maintainers: ["Max Neuvians"],
-     licenses: ["MIT"],
-     links: %{"GitHub" => "https://github.com/maxneuvians/nio_google_geocoder",
-              "Docs" => "https://github.com/maxneuvians/nio_google_geocoder"}]
+    # These are the default files included in the package
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Max Neuvians"],
+      licenses: ["MIT"],
+      links: %{
+        "GitHub" => "https://github.com/maxneuvians/nio_google_geocoder",
+        "Docs" => "https://github.com/maxneuvians/nio_google_geocoder"
+      }
+    ]
   end
-
 end
