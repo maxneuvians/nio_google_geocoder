@@ -5,13 +5,13 @@ defmodule NioGoogleGeocoder.Changeset do
   """
 
   import NioGoogleGeocoder, only: [geocode: 1]
-  import Ecto.Changeset, only: [get_field: 2, put_change: 3]
+  import Ecto.Changeset, only: [put_change: 3]
 
   @doc """
   """
   def add_geo_coordinates_to_changeset(changeset, address_fields, latitude_field, longitude_field) do
     if address_fields |> Enum.any?(fn field -> Map.has_key?(changeset.changes, field) end) do
-      merged_fields = Map.merge(changeset.model, changeset.changes)
+      merged_fields = Map.merge(changeset, changeset.changes)
 
       new_address =
         address_fields
