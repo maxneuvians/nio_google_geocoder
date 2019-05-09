@@ -5,7 +5,7 @@ defmodule NioGoogleGeocoder.Changeset do
   """
 
   import NioGoogleGeocoder, only: [geocode: 1]
-  import Ecto.Changeset, only: [get_field: 2, put_change: 3]
+  import Ecto.Changeset, only: [put_change: 3]
 
   @doc """
   """
